@@ -5,6 +5,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
+import theme from "./routes/theme";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,5 +27,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <Outlet />
+    </ChakraProvider>
+  );
 }
