@@ -1,5 +1,5 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/routes/_layout._index/route.tsx", "app/common/CommonButton.tsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,

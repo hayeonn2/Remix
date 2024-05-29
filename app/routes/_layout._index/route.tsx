@@ -9,10 +9,10 @@ import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
 import { THEME } from '~/common/constants';
-import { useTheme } from '~/hooks/use-theme';
+import {  useTheme } from '~/hooks/use-theme';
 import { templateState } from '~/recoil/atoms';
 
-import CommonButton from '../../common/CommonButton';
+import  CommonButton  from '../../common/CommonButton';
 
 export { meta } from './server';
 
@@ -49,20 +49,22 @@ export default function Index() {
       {/* CommonButton 컴포넌트 사용해보기! */}
       <Box mt={3}>
         <CommonButton
-          variant="outlined"
+          variant="contained"
+          disabled
           // eslint-disable-next-line max-len
-          sx={{ '&:hover': { color: 'white', backgroundColor: 'primary.light' } }}
+          // sx={{ '&:hover': { color: 'white', backgroundColor: 'primary.light' } }}
         >
           나는 MUI 팔레트 버튼임
         </CommonButton>
       </Box>
 
+      {/* gradient 버튼은 root에 지정한 색으로만 됨 (팔레트에 지정해주는 것 실패,,~) */}
       <Box mt={3}>
         <CommonButton
           variant="contained"
-          sx={{ backgroundColor: 'var(--blue-light)', '&:hover': { color: 'white', backgroundColor: 'var(--blue-dark)' } }}
+          gradient={['var(--blue-light)', '#EE609C']}
         >
-          나는 theme.scss 버튼임
+          나는 theme.scss 버튼임dd
         </CommonButton>
       </Box>
 
