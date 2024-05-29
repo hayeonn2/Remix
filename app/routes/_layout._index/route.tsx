@@ -1,7 +1,8 @@
 
 import {
   Box, Button, Card, CardActions,
-  CardContent, Typography,
+  CardContent, Grid,
+  Typography,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
@@ -42,7 +43,13 @@ export default function Index() {
           theme change
         </button>
       </div>
-      <Button variant="contained"> 안뇽하세연</Button>
+      <Button
+        variant="outlined"
+        sx={{ color: 'primary.light' }}
+      >
+        {' '}
+        안뇽하세연
+      </Button>
       <Button variant="contained"> 안뇽하세연11</Button>
 
       {/* <Card variant="contained">카드카드</Card> */}
@@ -50,9 +57,70 @@ export default function Index() {
         <Card variant="outlined">{card}</Card>
       </Box>
 
+      {/* 그리드는 1~12 사이의 정수 */}
+      <Grid
+        container
+        spacing={2}
+        mt={2}
+      >
+        <Grid
+          item
+          xs={12}
+        >
+          <Item>xs=12</Item>
+        </Grid>
+        <Grid
+          item
+          xs={2}
+        >
+          <Item>xs=2</Item>
+        </Grid>
+        <Grid
+          item
+          xs={4}
+        >
+          <Item>xs=4</Item>
+        </Grid>
+        <Grid
+          item
+          xs={3}
+        >
+          <Item>xs=3</Item>
+        </Grid>
+        <Grid
+          item
+          xs={3}
+        >
+          <Item>xs=3</Item>
+        </Grid>
+        <Grid
+          item
+          xs={9}
+        >
+          <Item>xs=9</Item>
+        </Grid>
+        <Grid
+          item
+          xs={3}
+        >
+          <Item>xs=3</Item>
+        </Grid>
+
+      </Grid>
+
     </Wrapper>
   );
 }
+
+const Item = styled('div')(({ theme }) => ({
+  // backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  border: '1px solid',
+  // borderColor: theme.palette.mode === 'dark' ? '#444d58' : '#ced7e0',
+  // padding: theme.spacing(1),
+  borderRadius: '4px',
+  textAlign: 'center',
+  padding: '10px',
+}));
 
 const bull = (
   <Box
