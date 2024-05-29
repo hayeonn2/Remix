@@ -49,10 +49,20 @@ export default function Index() {
       {/* CommonButton 컴포넌트 사용해보기! */}
       <Box mt={3}>
         <CommonButton
-          variant="contained"
-          sx={{ backgroundColor: 'primary', '&:hover': { backgroundColor: 'primary.dark' } }}
+          variant="outlined"
+          // eslint-disable-next-line max-len
+          sx={{ '&:hover': { color: 'white', backgroundColor: 'primary.light' } }}
         >
-          나 버튼임ㅋ
+          나는 MUI 팔레트 버튼임
+        </CommonButton>
+      </Box>
+
+      <Box mt={3}>
+        <CommonButton
+          variant="contained"
+          sx={{ backgroundColor: 'var(--blue-light)', '&:hover': { color: 'white', backgroundColor: 'var(--blue-dark)' } }}
+        >
+          나는 theme.scss 버튼임
         </CommonButton>
       </Box>
 
