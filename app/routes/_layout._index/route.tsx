@@ -1,6 +1,6 @@
 
 import {
-  Box, Button, Card, CardActions,
+  Box, Card, CardActions,
   CardContent, Grid,
   Typography,
 } from '@mui/material';
@@ -11,6 +11,8 @@ import styled from 'styled-components';
 import { THEME } from '~/common/constants';
 import { useTheme } from '~/hooks/use-theme';
 import { templateState } from '~/recoil/atoms';
+
+import CommonButton from '../../common/CommonButton';
 
 export { meta } from './server';
 
@@ -43,17 +45,22 @@ export default function Index() {
           theme change
         </button>
       </div>
-      <Button
-        variant="outlined"
-        sx={{ color: 'primary.light' }}
-      >
-        {' '}
-        안뇽하세연
-      </Button>
-      <Button variant="contained"> 안뇽하세연11</Button>
 
-      {/* <Card variant="contained">카드카드</Card> */}
-      <Box sx={{ minWidth: 275 }}>
+      {/* CommonButton 컴포넌트 사용해보기! */}
+      <Box mt={3}>
+        <CommonButton
+          variant="contained"
+          sx={{ backgroundColor: 'primary', '&:hover': { backgroundColor: 'primary.dark' } }}
+        >
+          나 버튼임ㅋ
+        </CommonButton>
+      </Box>
+
+      {/* Card 컴포넌트 만들어보기 */}
+      <Box
+        sx={{ minWidth: 275 }}
+        mt={3}
+      >
         <Card variant="outlined">{card}</Card>
       </Box>
 
@@ -166,7 +173,7 @@ const card = (
       </Typography>
     </CardContent>
     <CardActions>
-      <Button size="small">Learn More</Button>
+      <CommonButton>MORE!!!!</CommonButton>
     </CardActions>
   </>
 );
