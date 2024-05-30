@@ -46,25 +46,35 @@ export default function Index() {
         </button>
       </div>
 
-      {/* CommonButton 컴포넌트 사용해보기! */}
       <Box mt={3}>
         <CommonButton
-          variant="contained"
-          disabled
-          // eslint-disable-next-line max-len
-          // sx={{ '&:hover': { color: 'white', backgroundColor: 'primary.light' } }}
+          gradient={['skyblue', 'navy']}
         >
-          나는 MUI 팔레트 버튼임
+          사용자 임의 지정
         </CommonButton>
       </Box>
 
-      {/* gradient 버튼은 root에 지정한 색으로만 됨 (팔레트에 지정해주는 것 실패,,~) */}
       <Box mt={3}>
         <CommonButton
-          variant="contained"
-          gradient={['var(--blue-light)', '#EE609C']}
+          gradient="primaryMain"
         >
-          나는 theme.scss 버튼임dd
+          primary Main
+        </CommonButton>
+      </Box>
+
+      <Box mt={3}>
+        <CommonButton
+          gradient="primaryLight"
+        >
+          primary Light
+        </CommonButton>
+      </Box>
+
+      <Box mt={3}>
+        <CommonButton
+          gradient="primaryDark"
+        >
+          primary Dark
         </CommonButton>
       </Box>
 
