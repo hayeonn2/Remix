@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { useFetcher } from '@remix-run/react';
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import {
@@ -6,11 +6,7 @@ import {
 } from 'react';
 
 import { THEME } from '~/common/constants';
-import Palette from '~/themes/palette';
-
-export const themePalette = createTheme({
-  palette: Palette(),
-});
+import themePalette from '~/themes/theme';
 
 // 해당 코드들을 통해 React 애플리케이션에서 라이트, 다크 모드 전환 가능
 // 사용자의 OS 설정에 따라 초기 테마 결정, 또한 테마 변경 시 서버에 변경 내용 전송해 지속성 유지
