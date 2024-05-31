@@ -2,6 +2,8 @@
 import {
   Box, Card, CardActions,
   CardContent, Grid,
+  Radio,
+  TextField,
   Typography,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -46,6 +48,11 @@ export default function Index() {
         </button>
       </div>
 
+      <Radio
+        color="secondary"
+
+      />
+
       <Box mt={3}>
         <CommonButton
           gradient={['skyblue', 'navy']}
@@ -77,6 +84,40 @@ export default function Index() {
           primary Dark
         </CommonButton>
       </Box>
+
+      <Box mt={3}>
+        <CommonButton
+          gradient="secondaryMain"
+        >
+          secondary Main
+        </CommonButton>
+      </Box>
+
+      <Box mt={3}>
+        <CommonButton
+          gradient="secondaryLight"
+        >
+          secondary Light
+        </CommonButton>
+      </Box>
+
+      <Box mt={3}>
+        <CommonButton
+          gradient="secondaryDark"
+        >
+          secondary Dark
+        </CommonButton>
+      </Box>
+
+      <Box mt={3}>
+        <CommonButton
+          gradient="other"
+        >
+          other Accent
+        </CommonButton>
+      </Box>
+
+      <TextField color="primary">dd</TextField>
 
       {/* Card 컴포넌트 만들어보기 */}
       <Box
