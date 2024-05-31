@@ -1,24 +1,24 @@
 import type {  PaletteOptions, SimplePaletteColorOptions } from '@mui/material';
-// import { Palette } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 
-// PaletteColor 타입을 확장하여 test 속성을 추가합니다.
+// PaletteColor 타입을 확장해 사용하고 싶은 속성 추가
 interface ExtendedPaletteColor extends SimplePaletteColorOptions {
   top?: string;
   low?: string;
   gradient?: string;
 }
 
-// PaletteOptions 타입을 확장하여 primary 색상 팔레트를 ExtendedPaletteColor로 설정합니다.
+// PaletteOptions 타입을 확장하여 primary, primaryLight 등 색상 팔레트를 ExtendedPaletteColor로 설정
 export interface ExtendedPaletteOptions extends PaletteOptions {
   primary?: ExtendedPaletteColor;
+  secondary?: ExtendedPaletteColor;
   primaryLight?: ExtendedPaletteColor;
   primaryDark?: ExtendedPaletteColor;
-  // augmentColor? : ExtendedPaletteColor;
+  secondaryLight?: ExtendedPaletteColor;
+  secondaryDark?: ExtendedPaletteColor;
   other?: ExtendedPaletteColor;
 }
 
-// Palette 함수는 ExtendedPaletteOptions 타입의 객체를 반환합니다.
 const Palette = (): ExtendedPaletteOptions => {
   return {
     primary: {
@@ -37,26 +37,44 @@ const Palette = (): ExtendedPaletteOptions => {
       main: '#E2196C',
       top: '#D33FE3',
       low: '#E84288',
-      contrastText: '#fff',
+      contrastText: '#ffffff',
     },
     secondary: {
       main: '#2E42F5',
+      top: '#6714CC',
+      low: '#2E68F5',
+      contrastText: '#ffffff',
     },
-    other: {
-      main: '#f00',
+    secondaryLight: {
+      main: '#4A70EE',
+      top: '#953EFF',
+      low: '#5184FF',
+      contrastText: '#ffffff',
+    },
+    secondaryDark: {
+      main: '#2919E2',
+      top: '#5C21A3',
+      low: '#1C48B2',
+      contrastText: '#ffffff',
+    },
+    error: {
+      main:'#FA2256',
       contrastText: '#ffffff',
     },
     background: {
       default: '#ffffff',
     },
     text: {
-      primary: '#000000',
-      secondary: '#000000',
+      // title: '#ffffff',
+      primary: '#A5ADCF',
+      secondary: '#5D6588',
+      disabled: '#403D63',
     },
+
   };
 };
 
-// createTheme 함수를 사용하여 MUI 테마를 생성합니다.
+// createTheme 함수를 사용하여 MUI 테마 생성
 const themePalette = createTheme({
   palette: Palette(),
 });
